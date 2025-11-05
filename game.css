@@ -1,0 +1,147 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; font-family: "Poppins", sans-serif; color: #fff; }
+
+body {
+  background: linear-gradient(180deg, #0b1730, #07102a);
+}
+
+/* Score */
+#score-box {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.4);
+  padding: 8px 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 999;
+  font-size: 1.2rem;
+}
+#score-icon {
+  width: 32px;
+  height: auto;
+}
+
+/* Buttons */
+.top-buttons {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  gap: 8px;
+  z-index: 999;
+}
+.top-buttons button {
+  background: #ffcc33;
+  color: #003f91;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+/* Fullscreen button */
+#fullscreen-btn {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffcc33;
+  color: #003f91;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  user-select: none;
+  z-index: 999;
+}
+
+/* Mortar */
+#mortar {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px; /* Зменшено для ПК */
+  transition: transform 0.12s linear;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Goblins falling downward */
+.goblin {
+  position: absolute;
+  top: -120px;
+  width: 50px; /* Зменшено */
+  animation: goblin-fall linear forwards;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.goblin.thumbsup {
+  width: 32px !important;
+  height: auto;
+}
+
+@keyframes goblin-fall {
+  from { transform: translateY(0) rotate(0deg); }
+  to { transform: translateY(120vh) rotate(720deg); }
+}
+
+/* End screen */
+#end-screen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  text-align: center;
+  padding-top: 25vh;
+  z-index: 9999;
+}
+#final-score {
+  font-size: 48px;
+  margin: 12px 0;
+}
+.end-btn {
+  background: #ffcc33;
+  color: #003f91;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+}
+
+/* PHONE: auto vertical + bigger game zone */
+@media (max-width: 900px) {
+  body {
+    touch-action: none;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  #mortar {
+    width: 100px;
+  }
+
+  .goblin {
+    width: 40px;
+  }
+
+  #score-box {
+    font-size: 1.4rem;
+  }
+
+  #score-icon {
+    width: 24px;
+  }
+}

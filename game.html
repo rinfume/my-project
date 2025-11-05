@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catch the Goblins!</title>
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+
+  <!-- UI -->
+  <div id="score-box">
+    <img id="score-icon" src="goblin_thumbsup.png" alt="goblin">
+    <span id="score">0</span>
+  </div>
+
+  <!-- Controls -->
+  <div class="top-buttons">
+    <button id="go-back-btn" onclick="location.href='index.html'">Go Back</button>
+    <button id="finish-btn">Finish</button>
+  </div>
+
+  <button id="fullscreen-btn">Go Fullscreen</button>
+
+  <!-- End Screen -->
+  <div id="end-screen" aria-hidden="true">
+    <div class="end-inner">
+      <h2>Your Score:</h2>
+      <div id="final-score">0</div>
+      <button id="restart-btn" class="end-btn">Play Again</button>
+    </div>
+  </div>
+
+  <!-- Mortar -->
+  <img id="mortar" src="mortar.png" alt="mortar">
+
+  <script src="game.js"></script>
+</body>
+</html>

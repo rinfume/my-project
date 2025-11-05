@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mykyta | English Tutor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" /> 
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- PLAY BUTTON top-right -->
+  <button class="play-game-btn" id="play-game-btn">🎮 Play Mini-Game</button>
+
+  <!-- GOBLIN BACKGROUND LAYER -->
+  <div class="goblin-layer" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Hi, I'm Mykyta 👋</h1>
+    <p>Your friendly English tutor in France</p>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <section class="intro">
+      <div class="video-container">
+        <video controls poster="preview.jpg">
+          <source src="my-video.mp4" type="video/mp4" />
+          Your browser doesn't support video.
+        </video>
+      </div>
+
+      <div class="description">
+        <h2>About Me</h2>
+        <p>
+          I help French speakers improve their English through real-life conversations and fun, practical lessons.
+          My goal is to make you feel confident speaking English every day.
+        </p>
+
+        <a href="#contact" class="btn">Book a Lesson</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Ready to start? Let’s talk!</p>
+      <p>📧 <a href="mailto:messi_is_the_goat@gmail.com">messi_is_the_goat@gmail.com</a></p>
+      <p>📱 WhatsApp: +33 3 33 33 33 33</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Mykyta English Tutoring | Made with ❤️ in France</p>
+  </footer>
+
+  <script src="goblins.js"></script>
+  <script>
+    document.getElementById('play-game-btn').addEventListener('click', () => {
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = 'game.html?rotate=1';
+      } else {
+        window.location.href = 'game.html';
+      }
+    });
+  </script>
+</body>
+</html>
